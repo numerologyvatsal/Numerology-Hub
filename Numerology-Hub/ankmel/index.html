@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A personal marriage numerology reference based on Harish Johari's Indian numerology method."
+    />
+    <meta name="theme-color" content="#411d45" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>AnkMel | Numerology Marriage Compatibility</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/johari-rules.js" defer></script>
+    <script src="js/numerology-engine.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+
+  <body data-interpretation-language="en">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="AnkMel home">
+          <span class="brand-symbol" aria-hidden="true">AM</span>
+          <span class="brand-copy">
+            <strong>AnkMel</strong>
+            <small>Vedic Marriage Numerology</small>
+          </span>
+        </a>
+
+        <div class="language-switcher" aria-label="Interpretation language">
+          <span>Interpretation</span>
+          <div class="language-buttons" role="group" aria-label="Choose interpretation language">
+            <button
+              type="button"
+              class="language-button is-active"
+              data-language="en"
+              aria-pressed="true"
+            >
+              English
+            </button>
+            <button
+              type="button"
+              class="language-button"
+              data-language="gu"
+              aria-pressed="false"
+              lang="gu"
+            >
+              ગુજરાતી
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero-section">
+        <div class="container hero-content">
+          <p class="eyebrow">INDIAN NUMEROLOGY</p>
+          <h1>Numerology Marriage Compatibility</h1>
+          <p class="hero-description">
+            Enter both people's birth and name details to view a book-based
+            marriage reading, name-number support, compound birth-day notes,
+            and individual five-year themes.
+          </p>
+        </div>
+      </section>
+
+      <section class="calculator-section" aria-labelledby="detailsHeading">
+        <div class="container">
+          <div class="section-heading compact-heading">
+            <p class="eyebrow">ENTER DETAILS</p>
+            <h2 id="detailsHeading">Details of Both People</h2>
+          </div>
+
+          <form id="matchForm" class="match-form" novalidate>
+            <div class="people-grid">
+              <article class="person-form-card">
+                <div class="person-heading">
+                  <span class="person-number">1</span>
+                  <div>
+                    <p>First Person</p>
+                    <h3>Person One</h3>
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="personOneFirstName">First / Calling Name</label>
+                    <input
+                      type="text"
+                      id="personOneFirstName"
+                      name="personOneFirstName"
+                      placeholder="Example: Rahul"
+                      maxlength="60"
+                      autocomplete="off"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="personOneFamilyName">Family / Surname <span>(optional)</span></label>
+                    <input
+                      type="text"
+                      id="personOneFamilyName"
+                      name="personOneFamilyName"
+                      placeholder="Example: Shah"
+                      maxlength="60"
+                      autocomplete="off"
+                    />
+                  </div>
+
+                  <div class="form-group full-field">
+                    <label for="personOnePopularName">Popular / Full Name</label>
+                    <input
+                      type="text"
+                      id="personOnePopularName"
+                      name="personOnePopularName"
+                      placeholder="Name normally used in life"
+                      maxlength="100"
+                      autocomplete="name"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group full-field">
+                    <label for="personOneProposedName">Proposed Name After Marriage <span>(optional)</span></label>
+                    <input
+                      type="text"
+                      id="personOneProposedName"
+                      name="personOneProposedName"
+                      placeholder="Leave empty if the name will not change"
+                      maxlength="100"
+                      autocomplete="off"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="personOneDob">Date of Birth</label>
+                    <input type="date" id="personOneDob" name="personOneDob" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="personOneGender">Marriage Role</label>
+                    <select id="personOneGender" name="personOneGender" required>
+                      <option value="">Select role</option>
+                      <option value="man">Man</option>
+                      <option value="woman">Woman</option>
+                    </select>
+                  </div>
+                </div>
+
+                <label class="checkbox-field">
+                  <input type="checkbox" id="personOnePreviousDate" name="personOnePreviousDate" />
+                  <span>
+                    <strong>Use previous date for Vedic calculation</strong>
+                    <small>Select only when the birth was before the Vedic date-change near dawn.</small>
+                  </span>
+                </label>
+              </article>
+
+              <div class="match-divider" aria-hidden="true"><span>AND</span></div>
+
+              <article class="person-form-card">
+                <div class="person-heading">
+                  <span class="person-number">2</span>
+                  <div>
+                    <p>Second Person</p>
+                    <h3>Person Two</h3>
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="personTwoFirstName">First / Calling Name</label>
+                    <input
+                      type="text"
+                      id="personTwoFirstName"
+                      name="personTwoFirstName"
+                      placeholder="Example: Asha"
+                      maxlength="60"
+                      autocomplete="off"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="personTwoFamilyName">Family / Surname <span>(optional)</span></label>
+                    <input
+                      type="text"
+                      id="personTwoFamilyName"
+                      name="personTwoFamilyName"
+                      placeholder="Example: Patel"
+                      maxlength="60"
+                      autocomplete="off"
+                    />
+                  </div>
+
+                  <div class="form-group full-field">
+                    <label for="personTwoPopularName">Popular / Full Name</label>
+                    <input
+                      type="text"
+                      id="personTwoPopularName"
+                      name="personTwoPopularName"
+                      placeholder="Name normally used in life"
+                      maxlength="100"
+                      autocomplete="name"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group full-field">
+                    <label for="personTwoProposedName">Proposed Name After Marriage <span>(optional)</span></label>
+                    <input
+                      type="text"
+                      id="personTwoProposedName"
+                      name="personTwoProposedName"
+                      placeholder="Leave empty if the name will not change"
+                      maxlength="100"
+                      autocomplete="off"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="personTwoDob">Date of Birth</label>
+                    <input type="date" id="personTwoDob" name="personTwoDob" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="personTwoGender">Marriage Role</label>
+                    <select id="personTwoGender" name="personTwoGender" required>
+                      <option value="">Select role</option>
+                      <option value="man">Man</option>
+                      <option value="woman">Woman</option>
+                    </select>
+                  </div>
+                </div>
+
+                <label class="checkbox-field">
+                  <input type="checkbox" id="personTwoPreviousDate" name="personTwoPreviousDate" />
+                  <span>
+                    <strong>Use previous date for Vedic calculation</strong>
+                    <small>Select only when the birth was before the Vedic date-change near dawn.</small>
+                  </span>
+                </label>
+              </article>
+            </div>
+
+            <div class="future-year-field">
+              <div>
+                <label for="futureStartYear">Five-Year Reading Starts From</label>
+                <p>The result will show five separate Year Numbers for each person.</p>
+              </div>
+              <input
+                type="number"
+                id="futureStartYear"
+                name="futureStartYear"
+                min="1900"
+                max="2200"
+                step="1"
+                required
+              />
+            </div>
+
+            <p id="formError" class="form-error" role="alert" hidden></p>
+
+            <div class="submit-area">
+              <button type="submit" class="primary-button">Check Marriage Compatibility</button>
+              <button type="button" id="resetButton" class="secondary-button">Reset</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="resultsSection" class="results-section" aria-live="polite" hidden>
+        <div class="container results-stack">
+          <div class="section-heading">
+            <p class="eyebrow">MATCHING RESULT</p>
+            <h2>Book-Based Marriage Assessment</h2>
+          </div>
+
+          <article id="finalResultCard" class="final-result-card">
+            <span id="resultStatusBadge" class="result-status-badge">Result</span>
+            <h3 id="resultTitle">Marriage Combination</h3>
+            <div class="interpretation-grid">
+              <div class="interpretation-panel" data-language-content="en">
+                <span class="interpretation-label">English Interpretation</span>
+                <p id="resultSummaryEnglish"></p>
+              </div>
+              <div
+                class="interpretation-panel gujarati-interpretation"
+                data-language-content="gu"
+                lang="gu"
+              >
+                <span class="interpretation-label">ગુજરાતી અર્થઘટન</span>
+                <p id="resultSummaryGujarati"></p>
+              </div>
+            </div>
+          </article>
+
+          <section aria-labelledby="numberProfilesHeading">
+            <div class="subsection-heading">
+              <p class="eyebrow">NUMBER PROFILES</p>
+              <h2 id="numberProfilesHeading">Both People's Numbers</h2>
+            </div>
+            <div id="personProfiles" class="result-people-grid"></div>
+          </section>
+
+          <section class="detail-section" aria-labelledby="psychicPairHeading">
+            <div class="subsection-heading">
+              <p class="eyebrow">PRIMARY MARRIAGE READING</p>
+              <h2 id="psychicPairHeading">Detailed Psychic Number Pair Reading</h2>
+              <p>Both directional chapters are shown because Johari's text is sometimes asymmetric.</p>
+            </div>
+            <div id="pairViews" class="pair-views-grid"></div>
+            <div id="roleSpecificNote" class="role-note" hidden></div>
+          </section>
+
+          <section class="detail-section" aria-labelledby="likeChecksHeading">
+            <div class="subsection-heading">
+              <p class="eyebrow">SUPPORTING CHECKS</p>
+              <h2 id="likeChecksHeading">Like-Category Number Compatibility</h2>
+              <p>Psychic is compared with Psychic, Destiny with Destiny, and each name type with the same name type.</p>
+            </div>
+            <div id="likeCategoryChecks" class="check-list"></div>
+          </section>
+
+          <section class="detail-section" aria-labelledby="internalHarmonyHeading">
+            <div class="subsection-heading">
+              <p class="eyebrow">NAME SUPPORT</p>
+              <h2 id="internalHarmonyHeading">Internal Name Harmony</h2>
+              <p>Each popular name—and proposed married name when entered—is checked against that person's Psychic and Destiny Numbers.</p>
+            </div>
+            <div id="internalHarmony" class="result-people-grid"></div>
+          </section>
+
+          <section class="detail-section" aria-labelledby="compoundHeading">
+            <div class="subsection-heading">
+              <p class="eyebrow">BIRTH-DAY DETAIL</p>
+              <h2 id="compoundHeading">Compound Birth-Day Notes</h2>
+            </div>
+            <div id="compoundNotes" class="result-people-grid"></div>
+          </section>
+
+          <section class="detail-section" aria-labelledby="futureHeading">
+            <div class="subsection-heading">
+              <p class="eyebrow">FIVE-YEAR READING</p>
+              <h2 id="futureHeading">Individual Year Number Timeline</h2>
+              <p>These are separate yearly themes for each person, not a combined couple score.</p>
+            </div>
+            <div id="futureTimeline" class="timeline-stack"></div>
+          </section>
+
+          <div class="bottom-actions">
+            <button type="button" id="savePdfButton" class="primary-button">
+              Save Result as PDF
+            </button>
+            <button type="button" id="bottomResetButton" class="secondary-button">Reset All Details</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">AnkMel — Personal Numerology Reference</div>
+    </footer>
+  </body>
+</html>

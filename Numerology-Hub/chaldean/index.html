@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Chaldean Numerology</title>
+
+    <meta
+      name="description"
+      content="Chaldean Numerology Calculator and Interpretation App"
+    />
+
+    <meta name="theme-color" content="#1d4ed8" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="manifest" href="manifest.json" />
+
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  </head>
+
+  <body>
+    <main class="container">
+      <!-- =========================
+             Title
+        ========================== -->
+
+      <section class="language-switch">
+        <button type="button" id="englishBtn" class="language-btn active">
+          English
+        </button>
+
+        <button type="button" id="gujaratiBtn" class="language-btn">
+          ગુજરાતી
+        </button>
+      </section>
+
+      <!-- =========================
+             Input Form
+        ========================== -->
+
+      <section class="form-card">
+        <div class="form-group">
+          <label for="fullName"> Full Name </label>
+
+          <input
+            type="text"
+            id="fullName"
+            placeholder="Enter Full Name"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="dob"> Date of Birth </label>
+
+          <input type="date" id="dob" />
+        </div>
+
+        <div class="button-group">
+          <button id="calculateBtn">Calculate</button>
+
+          <button id="resetBtn">Reset</button>
+        </div>
+      </section>
+
+      <!-- =========================
+             Result
+        ========================== -->
+
+      <section id="reportContainer"></section>
+      <div class="pdf-button-wrapper">
+        <button type="button" id="downloadBtn">Download PDF</button>
+      </div>
+    </main>
+
+    <script src="js/utils.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/calculations.js"></script>
+    <script src="js/database.js"></script>
+
+    <script src="js/interpretations.js"></script>
+    <script src="js/interpretations-gu.js"></script>
+
+    <script src="js/language.js"></script>
+
+    <script src="js/report.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

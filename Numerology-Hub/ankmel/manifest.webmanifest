@@ -1,0 +1,27 @@
+{
+  "name": "AnkMel – Vedic Marriage Numerology",
+  "short_name": "AnkMel",
+  "description": "A personal Harish Johari marriage numerology reference.",
+  "id": "./index.html",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f2eb",
+  "theme_color": "#411d45",
+  "orientation": "any",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
